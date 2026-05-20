@@ -5,7 +5,8 @@ module com.mycompany.avc {
     requires java.sql;
 
     opens com.mycompany.avc to javafx.fxml;
-    opens com.mycompany.avc.controller to javafx.fxml;
+    opens controller to javafx.fxml;
 
     exports com.mycompany.avc;
-} 
+    exports controller;
+}
