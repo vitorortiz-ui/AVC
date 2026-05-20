@@ -1,0 +1,26 @@
+root {
+    -fx-background-image: url("\com\mycompany\avc\imagens\camp_bg.png");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+
+.btn-menu {
+    -fx-background-color: #3F2A1E;
+    -fx-text-fill: #FFEEBB;
+    -fx-font-weight: bold;
+    -fx-border-color: #FFAA33;
+    -fx-border-width: 3;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+}
+
+.btn-sair {
+    -fx-background-color: #2C211A;
+    -fx-text-fill: #E07A7A;
+    -fx-font-weight: bold;
+    -fx-border-color: #6B5C4A;
+    -fx-border-width: 3;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+}
