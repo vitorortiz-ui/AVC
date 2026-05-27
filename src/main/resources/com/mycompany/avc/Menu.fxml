@@ -1,74 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import java.net.URL?>
 
-<StackPane xmlns="http://javafx.com/javafx/21"
-           xmlns:fx="http://javafx.com/fxml/1"
-           fx:id="rootPane"
-           fx:controller="com.mycompany.avc.controller.MenuController"
-           prefHeight="720.0"
-           prefWidth="1280.0">
+<StackPane fx:id="rootPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuController">
 
-    <ImageView fx:id="bgImage"
-               fitWidth="1280.0" fitHeight="720.0"
-               preserveRatio="false" mouseTransparent="true"/>
+    <ImageView fx:id="bgImage" fitHeight="720.0" fitWidth="1280.0" mouseTransparent="true" preserveRatio="false" />
 
-    <VBox alignment="CENTER" spacing="25.0"
-          style="-fx-background-color: transparent;">
-        <padding>
-            <Insets bottom="50.0" left="50.0" right="50.0" top="40.0"/>
+    <VBox alignment="CENTER" spacing="25.0">
+         
+        
+          <padding>
+            <Insets bottom="50.0" left="50.0" right="50.0" top="40.0" />
         </padding>
 
-        <Label text="Acampamento"
-               style="-fx-text-fill: #FFCC66; -fx-font-weight: bold; -fx-effect: dropshadow(gaussian, #000000, 8, 0.6, 2, 2);">
-            <font><Font name="Serif" size="48.0"/></font>
+        <Label style="-fx-text-fill: #FFCC66; -fx-font-weight: bold; -fx-effect: dropshadow(gaussian, #000000, 8, 0.6, 2, 2);" text="Acampamento">
+            <font><Font name="Serif" size="48.0" /></font>
         </Label>
 
-        <Label text="An Average Campaing"
-               style="-fx-text-fill: #B8A47E; -fx-font-style: italic;">
-            <font><Font name="Serif" size="23.0"/></font>
+        <Label style="-fx-text-fill: #B8A47E; -fx-font-style: italic;" text="An Average Campaing">
+            <font><Font name="Serif" size="23.0" /></font>
         </Label>
 
-        <Label text="" prefHeight="30.0"/>
+        <Label prefHeight="30.0" text="" />
 
         <VBox alignment="CENTER" spacing="16.0">
 
-            <Button fx:id="btnJornada" onAction="#switchToJornada"
-                    text="🌲 Jornada"
-                    prefWidth="480.0" prefHeight="70.0"
-                    styleClass="btn-menu"
-                    style="-fx-font-size: 24px;"/>
+            <Button fx:id="btnJornada" onAction="#switchToJornada" prefHeight="70.0" prefWidth="480.0" style="-fx-font-size: 24px;" styleClass="btn-menu" text="🌲 Jornada" />
 
-            <Button fx:id="btnMetaUpgrades"
-                    text="🔥 Skills"
-                    prefWidth="480.0" prefHeight="62.0"
-                    styleClass="btn-menu"
-                    style="-fx-font-size: 22px;"/>
+            <Button fx:id="btnMetaUpgrades" onAction="#switchToSkills" prefHeight="62.0" prefWidth="480.0" style="-fx-font-size: 22px;" styleClass="btn-menu" text="🔥 Skills" />
 
-            <Button fx:id="btnRanking"
-                    text="Ranking"
-                    prefWidth="480.0" prefHeight="62.0"
-                    styleClass="btn-menu"
-                    style="-fx-font-size: 22px;"/>
+            <Button fx:id="btnRanking" onAction="#switchToRanking" prefHeight="62.0" prefWidth="480.0" style="-fx-font-size: 22px;" styleClass="btn-menu" text="Ranking" />
 
-            <Button fx:id="btnCreditos"
-                    text="📜 Créditos"
-                    prefWidth="480.0" prefHeight="62.0"
-                    styleClass="btn-menu"
-                    style="-fx-font-size: 22px;"/>
+            <Button fx:id="btnCreditos" onAction="#switchToCreditos"  prefHeight="62.0" prefWidth="480.0" style="-fx-font-size: 22px;" styleClass="btn-menu" text="📜 Créditos" />
 
-            <Button fx:id="btnSair"
-                    text="🌙 Sair"
-                    prefWidth="480.0" prefHeight="58.0"
-                    styleClass="btn-sair"
-                    style="-fx-font-size: 20px;"/>
+            <Button fx:id="btnSair" onAction="#sairDoJogo" prefHeight="58.0" prefWidth="480.0" style="-fx-font-size: 20px;" styleClass="btn-sair" text="🌙 Sair" />
+         <padding>
+            <Insets right="700.0" />
+         </padding>
         </VBox>
     </VBox>
 

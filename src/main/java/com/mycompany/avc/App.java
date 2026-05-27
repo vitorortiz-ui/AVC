@@ -43,14 +43,18 @@ public class App extends Application {
 
     private static Parent loadFXML(String fxml) throws IOException {
 
-        FXMLLoader fxmlLoader =
-                new FXMLLoader(App.class.getResource(
-                        "/com/mycompany/avc/" + fxml + ".fxml"
-                ));
+    String caminho = "/com/mycompany/avc/" + fxml + ".fxml";
 
+    System.out.println("Tentando carregar: " + caminho);
 
-        return fxmlLoader.load();
-    }
+    var url = App.class.getResource(caminho);
+
+    System.out.println("URL encontrada: " + url);
+
+    FXMLLoader fxmlLoader = new FXMLLoader(url);
+
+    return fxmlLoader.load();
+}
 
     public static void main(String[] args) {
         launch();

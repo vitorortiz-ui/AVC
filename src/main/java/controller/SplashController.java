@@ -16,7 +16,7 @@ import javafx.util.Duration;
 
 public class SplashController {
 
-    @FXML private VBox rootPane;
+    @FXML private VBox StackPane;
     @FXML private VBox logoContainer;
     @FXML private ImageView logoImage;
     @FXML private Label subtitleLabel;
@@ -29,17 +29,18 @@ public class SplashController {
     }
 
     @FXML
-    public void initialize() {
-        try {
-            Image logo = new Image(getClass().getResourceAsStream("/com/mycompany/avc/imagens/logo.png"));
-            logoImage.setImage(logo);
-        } catch (Exception e) {
-            System.err.println("Logo não encontrada: " + e.getMessage());
-        }
+public void initialize() {
 
-        blackOverlay.widthProperty().bind(rootPane.widthProperty());
-        blackOverlay.heightProperty().bind(rootPane.heightProperty());
+    var stream = getClass().getResourceAsStream("/imagens/logo.png");
+
+    if (stream == null) {
+        System.out.println("❌ Logo não encontrada!");
+        return;
     }
+
+    Image logo = new Image(stream);
+    logoImage.setImage(logo);
+}
 
     public void startAnimation() {
         SequentialTransition sequence = new SequentialTransition(
@@ -125,25 +126,22 @@ public class SplashController {
   private void transitionToGame() {
     try {
 
-        FXMLLoader loader = new FXMLLoader(
-            getClass().getResource("/com/mycompany/avc/Menu.fxml")
-        );
+        System.out.println("Carregando Menu.fxml...");
 
-        Scene gameScene = new Scene(loader.load());
-        gameScene.setFill(Color.BLACK);
+        var url = getClass().getResource("/com/mycompany/avc/Menu.fxml");
+        System.out.println("URL MENU: " + url);
 
-        StackPane root = (StackPane) gameScene.getRoot();
-        root.setOpacity(0.0);
+        FXMLLoader loader = new FXMLLoader(url);
 
-        primaryStage.setScene(gameScene);
+        StackPane root = loader.load();
 
-        FadeTransition fadeIn = new FadeTransition(Duration.millis(800), root);
-        fadeIn.setFromValue(0.0);
-        fadeIn.setToValue(1.0);
-        fadeIn.play();
- 
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+
+        root.setOpacity(1.0);
+
     } catch (Exception e) {
-        e.printStackTrace(); // ← mostra erro real
+        e.printStackTrace();
     }
 }
 }
